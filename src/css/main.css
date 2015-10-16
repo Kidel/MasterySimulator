@@ -1,0 +1,527 @@
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::selection {
+    background: #1c1e1b;
+    background: rgba(0,0,0,0.4);
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background: #1c1e1b;
+    background: rgba(0,0,0,0.4);
+    text-shadow: none;
+}
+
+*:focus {
+    outline: 0;
+}
+
+button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+@font-face {
+    font-family: 'Menomonia';
+    src: url('../fonts/menomonia.woff') format('woff');
+}
+
+body {
+    background: #3a281c;
+    color: #f2f4e9;
+    font-family: 'Trebuchet MS', Tahoma, Verdana, Arial;
+}
+
+a, a:active, a:visited, a:focus {
+    color: #eeebdc;
+    text-decoration: none;
+}
+a:hover {
+    color: #fff;
+}
+
+#hero-panel {
+    padding: 20px;
+}
+
+#total-points, #selected-track-points-container {
+    color: #c7c3c0;
+    text-align: center;
+    padding-left: 90px;
+    background: url('../img/total-mastery-icon.png') no-repeat 110px center;
+    background-size: 90px 90px;
+}
+#mastery-points, #mastery-points-input, #selected-track-points {
+    color: #fcf3e2;
+    font-size: 41px;
+    font-family: 'Menomonia', Tahoma, Verdana, Arial;
+}
+#mastery-points-input{
+    background: #3a281c;
+    border: 1px solid rgb(75, 71, 68);
+    padding-left: 7px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+#selected-status, #selected-track-points-container {
+    background: #251d1a;
+    height: 90px;
+    padding: 10px;
+}
+#selected-track-points-container {
+    background: #251d1a url('../img/mastery-point.png') no-repeat right 10px center;
+    background-size: 70px 70px;
+}
+#selected-status {
+    padding-left: 90px;
+    background-image: url('../img/training.png');
+    background-repeat: no-repeat;
+    background-position: 30px center;
+    overflow: visible;
+}
+#selected-status p {
+    position: relative;
+    overflow: visible;
+    white-space: nowrap;
+    z-index: 90;
+}
+#selected-zone-name {
+    color: #c7c3c0;
+    font-size: 14px;
+}
+#selected-track-name {
+    color: #fcf3e2;
+    font-size: 26px;
+    font-family: 'Menomonia';
+}
+#zones div h3 {
+    background: #100b07 url('../img/arrow.png') no-repeat 8px center;
+    font-size: 14px;
+    padding: 10px;
+    padding-left: 23px;
+    margin-bottom: 0;
+}
+#zones div h4 {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    padding-left: 7px;
+}
+#zones div.track-selector:nth-child(even) {
+    background: #211813;
+}
+#zones div.track-selector:nth-child(odd) {
+    background: #120a07;
+}
+.track-selector {
+    margin: 0;
+    height: 40px;
+}
+.track-selector h4 a {
+    position: relative;
+    z-index: 99;
+    padding: 10px;
+    padding-left: 18px;
+}
+.track-selector div {
+    position: relative;
+    z-index: 95;
+}
+.small-progress {
+    margin-bottom: 0;
+    margin-left: 25px;
+    margin-right: 10px;
+    margin-top: -6px;
+    height: 4px !important;
+}
+.select-track {
+    padding-left: 15px;
+    display: block;
+}
+.track-toggle {
+    background: url('../img/training.png') no-repeat left center;
+    background-size: 10px 10px;
+}
+.line-name {
+    color: #fcf3e2;
+    font-size: 25px;
+    font-family: 'Menomonia';
+}
+#selected-track {
+    margin: 0;
+    padding: 0;
+}
+.selected-line-left, .selected-line-center, .selected-line-right {
+    background: #2f2621;
+    padding: 7px;
+    margin-bottom: 7px;
+    margin-top: 7px;
+    height: 80px;
+
+}
+.selected-line-right {
+    padding-top: 5px;
+}
+.selected-line-right button {
+    padding-top: 45px;
+    margin-left: -3px;
+    background: url('../img/add-button.png') no-repeat center center;
+    color: rgba(255,255,255,0.6) !important;
+    text-decoration: none !important;
+    border: 0;
+    width: 67px;
+    height: 67px;
+    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.4);
+    box-shadow: 0px 0px 3px rgba(0,0,0,.4);
+}
+.line-icon {
+    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+    box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+    width: 67px;
+    height: 67px;
+}
+.greyscale {
+    filter: url('../js/filters.svg#grayscale'); /* Firefox 3.5+ */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+    filter: grayscale(100%);
+}
+.greyscale-ie {
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    /* IE 5-7 */
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+.selected-line-right button.remove-points {
+    background: url('../img/remove-button.png') no-repeat center center;
+}
+.selected-line-info {
+    margin-left: 10px;
+    color: rgba(255,255,255,0.4) !important;
+    text-decoration: none !important;
+}
+.progress {
+    border-radius: 0;
+    height: 9px;
+    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+    box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+    background-color: #4b4744;
+}
+.progress-bar {
+    background-color: #ebbc00;
+    -webkit-box-shadow: inset -7px 0px 3px rgba(255,255,255,.8);
+    box-shadow: inset -7px 0px 3px rgba(255,255,255,.8);
+}
+@keyframes progress-bar-full {
+    0%   {width: 0;}
+    100% {width: 100%}
+}
+@keyframes progress-bar-empty {
+    0%   {width: 100%;}
+    100% {width: 0}
+}
+.progress-width-going-100 {
+    width: 100%;
+    animation-name: progress-bar-full;
+    animation-duration: 1s;
+}
+.progress-width-going-0 {
+    width: 0%;
+    animation-name: progress-bar-empty;
+    animation-duration: 1s;
+}
+.progress-width-100 {
+    width: 100%;
+}
+.progress-width-0 {
+    width: 0;
+}
+.popover, .popover-title {
+    min-width:  200px;
+    border-radius: 0;
+    background-color: #1b1d1a;
+    background-color: rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,.8);
+    box-shadow: 0 0 4px rgba(0,0,0,.8);
+}
+.popover-title {
+    display:none;
+    visibility:hidden;
+    opacity:0;
+}
+.popover.right>.arrow:after{
+    border-right-color: #1b1d1a;
+    border-right-color: rgba(0,0,0,0.7);
+}
+.popover.left>.arrow:after{
+    border-left-color: #1b1d1a;
+    border-left-color: rgba(0,0,0,0.7);
+}
+.popover.top>.arrow:after{
+    border-top-color: #1b1d1a;
+    border-top-color: rgba(0,0,0,0.7);
+}
+.popover.bottom>.arrow:after{
+    border-bottom-color: #1b1d1a;
+    border-bottom-color: rgba(0,0,0,0.7);
+}
+
+/* TODO
+    CSS keyframe per loading iniziale progress bar
+*/
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
